@@ -14,7 +14,9 @@ class TestTodo(unittest.TestCase):
         )
 
     def test_todo_id(self):
-        self.assertIsNotNone(todo.id)
+        self.assertIsNotNone(todo.id, "todo has non-none id")
+        todo2 = Todo("read clean code book for 30 mins")
+        self.assertNotEqual(todo.id, todo2.id, "every todo has unique id")
 
     def test_default_state_of_todo(self):
         todo = Todo(task)
