@@ -4,14 +4,17 @@ from todo import Todo
 
 
 task = "Code for 10 hrs"
+todo = Todo(task)
 
 
 class TestTodo(unittest.TestCase):
     def test_todo_init(self):
-        todo = Todo(task)
         self.assertAlmostEqual(
             todo.task, task, "correctly saves the given task on initialization"
         )
+
+    def test_todo_id(self):
+        self.assertIsNotNone(todo.id)
 
     def test_default_state_of_todo(self):
         todo = Todo(task)
