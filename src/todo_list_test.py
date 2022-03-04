@@ -3,8 +3,10 @@ import unittest
 from todo import Todo
 from todo_list import TodoList
 
-todo1 = Todo("code for 2 hrs")
-todo2 = Todo("read clean code book for 30 mins")
+task1 = "code for 2 hrs"
+todo1 = Todo(task1)
+task2 = "read clean code book for 30 mins"
+todo2 = Todo(task2)
 list_name = "work-todos"
 todo_list = TodoList(list_name)
 
@@ -23,3 +25,7 @@ class TestTodoList(unittest.TestCase):
         self.assertNotEqual(
             todo_list.id, todo_list2.id, "every todo-list has unique id"
         )
+
+    def test_add_todo(self):
+        todo_list.add_todo(todo1)
+        self.assertTrue(todo_list.todos[-1] == todo1, "todos get added to todo-list")
