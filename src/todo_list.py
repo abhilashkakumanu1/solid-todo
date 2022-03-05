@@ -1,7 +1,7 @@
 from uuid import uuid4
-from typing import List, Union
+from typing import List
 
-from todo import ITodo, Todo
+from todo import ITodo
 
 
 class TodoList:
