@@ -18,3 +18,6 @@ class TodoList:
 
     def get_todos(self) -> List[ITodo]:
         return self._todos
+
+    def delete_todo(self, id):
+        self._todos = [todo for todo in self._todos if todo.id != id]
