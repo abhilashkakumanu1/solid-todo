@@ -7,11 +7,14 @@ from todo import ITodo, Todo
 class TodoList:
     id: str
     list_name: str
-    todos: List[ITodo] = []
+    _todos: List[ITodo] = []
 
     def __init__(self, list_name):
         self.id = str(uuid4())
         self.list_name = list_name
 
     def add_todo(self, todo: ITodo):
-        self.todos.append(todo)
+        self._todos.append(todo)
+
+    def get_todos(self) -> List[ITodo]:
+        return self._todos
