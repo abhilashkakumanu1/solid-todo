@@ -21,3 +21,8 @@ class TodoList:
 
     def delete_todo(self, id):
         self._todos = [todo for todo in self._todos if todo.id != id]
+
+    def toggle_todo(self, id):
+        for i, todo in enumerate(self._todos):
+            if todo.id == id:
+                self._todos[i].toggle()

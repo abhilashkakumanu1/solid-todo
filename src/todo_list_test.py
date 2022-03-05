@@ -41,9 +41,14 @@ class TestTodoList(unittest.TestCase):
 
     def test_delete_todo(self):
         todo_list = TodoList(list_name)
-        print(todo_list._todos)
         todo_list.add_todo(todo1)
-        print(todo_list._todos)
         todo_list.delete_todo(todo1.id)
-        print(todo_list._todos)
         self.assertTrue(todo_list._todos == [], "should delete todo with given id")
+
+    def test_toggle_todo(self):
+        todo_list = TodoList(list_name)
+        todo_list.add_todo(todo1)
+        todo_list.toggle_todo(todo1.id)
+        self.assertTrue(
+            todo_list._todos[0].is_completed, "should toggle todo with given id"
+        )
