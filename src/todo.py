@@ -1,5 +1,13 @@
 from uuid import uuid4
 
+from pydantic import BaseModel
+
+
+class TodoDetails(BaseModel):
+    id: str
+    task: str
+    isCompleted: bool
+
 
 class Todo:
     id: str

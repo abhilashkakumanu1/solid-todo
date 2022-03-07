@@ -1,7 +1,15 @@
 from uuid import uuid4
 from typing import List
 
-from todo import Todo
+from pydantic import BaseModel
+
+from todo import Todo, TodoDetails
+
+
+class TodoListDetails(BaseModel):
+    id: str
+    listName: str
+    todos: List[TodoDetails]
 
 
 class TodoList:
