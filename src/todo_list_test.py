@@ -28,27 +28,19 @@ class TestTodoList(unittest.TestCase):
         )
 
     def test_add_todo(self):
-        todo_list = TodoList(list_name)
-        todo_list.add_todo(todo1)
-        self.assertTrue(todo_list._todos[-1] == todo1, "todos get added to todo-list")
+        todo_list3 = TodoList(list_name)
+        todo_list3.add_todo(todo1)
+        self.assertTrue(todo_list3._todos[-1] == todo1, "todos get added to todo-list")
 
     def test_get_todos(self):
-        todo_list = TodoList(list_name)
-        todo_list.add_todo(todo1)
-        todo_list.add_todo(todo2)
-        todos = todo_list.get_todos()
-        self.assertEqual(todos, todo_list._todos, "can get all the todos")
+        todo_list4 = TodoList(list_name)
+        todo_list4.add_todo(todo1)
+        todo_list4.add_todo(todo2)
+        todos = todo_list4.get_todos()
+        self.assertEqual(todos, todo_list4._todos, "can get all the todos")
 
     def test_delete_todo(self):
-        todo_list = TodoList(list_name)
-        todo_list.add_todo(todo1)
-        todo_list.delete_todo(todo1.id)
-        self.assertTrue(todo_list._todos == [], "should delete todo with given id")
-
-    def test_toggle_todo(self):
-        todo_list = TodoList(list_name)
-        todo_list.add_todo(todo1)
-        todo_list.toggle_todo(todo1.id)
-        self.assertTrue(
-            todo_list._todos[0].is_completed, "should toggle todo with given id"
-        )
+        todo_list5 = TodoList(list_name)
+        todo_list5.add_todo(todo1)
+        todo_list5.delete_todo(todo1.id)
+        self.assertTrue(todo_list5._todos == [], "should delete todo with given id")
