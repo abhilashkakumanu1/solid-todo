@@ -31,5 +31,6 @@ class ITodoListRepo(ABC):
     def update_task(self, todo_list_id: str, todo_id: str, task: str):
         """update task details of the given todo"""
 
+    @abstractmethod
     def delete_todo(self, todo_list_id: str, todo_id: str):
         """Delete a todo with given id from todo-list"""
