@@ -18,6 +18,7 @@ class TodoListRepoImp(ITodoListRepo):
         todo_list = TodoList.objects.with_id(todo_list_id)
         todo_list.todos.append(todo)
         todo_list.save()
+        return todo.id
 
     def toggle_todo(self, todo_list_id, todo_id):
         todo_list = TodoList.objects.with_id(todo_list_id)

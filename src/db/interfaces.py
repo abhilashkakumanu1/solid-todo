@@ -16,11 +16,11 @@ class ITodoListRepo(ABC):
         """Get the todo-list with given id"""
 
     @abstractmethod
-    def create(self, todo_list: TodoList):
+    def create(self, todo_list: TodoList) -> str:
         """Create new todo-list with given name"""
 
     @abstractmethod
-    def add_todo(self, todo_list_id: str, todo: Todo):
+    def add_todo(self, todo_list_id: str, todo: Todo) -> str:
         """add todo to the todo-list with given id"""
 
     @abstractmethod
