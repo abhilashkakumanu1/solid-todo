@@ -68,7 +68,7 @@ def add_todo(body: AddTodoReqBody):
 
 
 @app.get("/todoList/{todoListId}")
-def get_todo_list():
+def get_todo_list(todoListId):
     todo_list = services.get_todo_list(todo_list_id=todoListId)
     return {"ok": True, "todo_list": todo_list}
 
