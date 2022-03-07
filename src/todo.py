@@ -6,8 +6,8 @@ class Todo:
     task: str
     is_completed: bool = False
 
-    def __init__(self, task: str):
-        self.id = str(uuid4())
+    def __init__(self, task: str, id=None):
+        self.id = id or str(uuid4())
         self.task = task
 
     def toggle(self):

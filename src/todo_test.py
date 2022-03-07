@@ -11,7 +11,7 @@ todo2 = Todo(task2)
 
 class TestTodo(unittest.TestCase):
     def test_todo_init(self):
-        self.assertAlmostEqual(
+        self.assertEqual(
             todo1.task, task1, "correctly saves the given task1 on initialization"
         )
 
@@ -46,3 +46,8 @@ class TestTodo(unittest.TestCase):
         todo5.id = todo1.id
         todo5.task = "tada-tada-tada"
         self.assertTrue(todo1 != todo5, "diff in tasks leads to inequality")
+
+    def test_init_with_id(self):
+        id = "123"
+        todo6 = Todo(task1, id)
+        self.assertEqual(todo6.id, id, "correctly saves the id while initialization")
