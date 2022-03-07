@@ -6,6 +6,10 @@ authors = ["abhilashkakumanu1 <abhilashkakumanu1@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
+mongoengine = "^0.24.0"
+python-dotenv = "^0.19.2"
+pydantic = "^1.9.0"
+dnspython = "^2.2.1"
 
 [tool.poetry.dev-dependencies]
 black = "^22.1.0"
