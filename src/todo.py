@@ -8,11 +8,11 @@ class ITodo(ABC):
     is_completed: bool
 
     @abstractmethod
-    def toogle(self):
+    def toggle(self):
         """Toggle the is_completed field of todo"""
 
 
-class Todo(ABC):
+class Todo(ITodo):
     id: str
     task: str
     is_completed: bool = False

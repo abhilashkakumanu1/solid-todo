@@ -1,10 +1,30 @@
 from uuid import uuid4
 from typing import List
+from abc import ABC, abstractmethod
+
 
 from todo import ITodo
 
 
-class TodoList:
+class ITodoList(ABC):
+    id: str
+    list_name: str
+    _todos: List[ITodo]
+
+    @abstractmethod
+    def add_todo(self):
+        """Add todo to the todo-list"""
+
+    @abstractmethod
+    def get_todos(self):
+        """Get all todos on the todo-list"""
+
+    @abstractmethod
+    def delete_todo(self):
+        """Delete todo on the todo-list"""
+
+
+class TodoList(ITodoList):
     id: str
     list_name: str
     _todos: List[ITodo] = []
