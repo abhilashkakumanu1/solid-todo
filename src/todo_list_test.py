@@ -44,3 +44,11 @@ class TestTodoList(unittest.TestCase):
         todo_list5.add_todo(todo1)
         todo_list5.delete_todo(todo1.id)
         self.assertTrue(todo_list5._todos == [], "should delete todo with given id")
+
+    def test_init_with_todos(self):
+        todos = [todo1, todo2]
+        todo_list5 = TodoList(list_name, todos=[todo1, todo2])
+        self.assertTrue(
+            todo_list5._todos == todos,
+            "correctly saves the given todos while initialization",
+        )

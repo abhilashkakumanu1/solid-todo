@@ -9,9 +9,10 @@ class TodoList:
     list_name: str
     _todos: List[Todo] = []
 
-    def __init__(self, list_name):
-        self.id = str(uuid4())
+    def __init__(self, list_name, id=None, todos: List[Todo] = []):
+        self.id = id or str(uuid4())
         self.list_name = list_name
+        self._todos = todos
 
     def add_todo(self, todo: Todo):
         self._todos.append(todo)
