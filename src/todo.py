@@ -20,3 +20,6 @@ class Todo:
             and self.task == other.task
             and self.is_completed == other.is_completed
         )
+
+    def update_task(self, task: str):
+        self.task = task

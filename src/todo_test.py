@@ -51,3 +51,9 @@ class TestTodo(unittest.TestCase):
         id = "123"
         todo6 = Todo(task1, id)
         self.assertEqual(todo6.id, id, "correctly saves the id while initialization")
+
+    def test_update_task(self):
+        todo7 = Todo(task1)
+        new_task = "plan your day"
+        todo7.update_task(new_task)
+        self.assertEqual(todo7.task, new_task, "correctly updates task")
