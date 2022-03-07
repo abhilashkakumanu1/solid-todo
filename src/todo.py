@@ -1,18 +1,7 @@
 from uuid import uuid4
-from abc import ABC, abstractmethod
 
 
-class ITodo(ABC):
-    id: str
-    task: str
-    is_completed: bool
-
-    @abstractmethod
-    def toggle(self):
-        """Toggle the is_completed field of todo"""
-
-
-class Todo(ITodo):
+class Todo:
     id: str
     task: str
     is_completed: bool = False
@@ -24,7 +13,7 @@ class Todo(ITodo):
     def toggle(self):
         self.is_completed = not self.is_completed
 
-    def __eq__(self, other: ITodo):
+    def __eq__(self, other):
         return (
             self.id == other.id
             and self.task == other.task
