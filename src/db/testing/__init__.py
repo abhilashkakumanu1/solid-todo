@@ -3,21 +3,13 @@ from typing import Dict, Type
 
 from pydantic import BaseModel
 
-from ..interfaces import IDB, ITodoListRepo
+from ..interfaces import ITodoListRepo
 from ..mongo.mappers import TodoMapper, TodoListMapper
 from todo_list import TodoListDetails
 
 
 class IDataBase(BaseModel):
     __root__: Dict[str, Type[TodoListDetails]]
-
-
-class DBImp(IDB):
-    def connect(self):
-        logging.info("connected to testing DB")
-
-
-DB = DBImp()
 
 
 class TodoListRepoImp(ITodoListRepo):

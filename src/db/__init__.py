@@ -1,1 +1,1 @@
-from .mongo import DB, TodoListRepo
+from .mongo import TodoListRepo

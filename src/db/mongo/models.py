@@ -18,3 +18,5 @@ class TodoList(Document):
     id = StringField(primary_key=True)
     listName = StringField(required=True)
     todos = ListField(EmbeddedDocumentField(Todo))
+
+    meta = {"collection": "todoList"}

@@ -1,4 +1,4 @@
-from src.db.interfaces import ITodoListRepo
+from db.interfaces import ITodoListRepo
 from todo import Todo
 from todo_list import TodoList, TodoListDetails
 

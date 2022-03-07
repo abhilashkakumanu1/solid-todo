@@ -4,12 +4,6 @@ from todo import Todo
 from todo_list import TodoList
 
 
-class IDB(ABC):
-    @abstractmethod
-    def connect():
-        """Connect to Database"""
-
-
 class ITodoListRepo(ABC):
     @abstractmethod
     def get(self, id: str) -> TodoList:
